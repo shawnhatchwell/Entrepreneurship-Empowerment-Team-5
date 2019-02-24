@@ -1,0 +1,87 @@
+#searchBar {
+  margin: 10px 10px;
+}
+
+.tableWrapper {
+  max-height: 450px;
+  overflow: auto;
+}
+
+#UfDirect {
+  border-bottom: 5px solid #E0812E;
+  background-color: #285797;
+  color: white;
+  font-size: 30px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#takingForm {
+  background-color: #E0812E;
+  padding-left: 20px;
+  border-radius: 30px;
+}
+
+.input-group-addon {
+  background-color: #E0812E;
+  border-color: black;
+  border-radius: 10px;
+}
+
+#idProject {
+  color: #FFFFFF;
+  font-weight: normal;
+  font-style: normal;
+}
+
+#TitleofTable {
+  color: black;
+  font-style: normal;
+}
+
+.jumbotron {
+  background-color: #285797;
+  color: white;
+}
+
+.tableWrapper {
+  scroll-behavior: smooth;
+  font-weight: bold;
+  font-style: italic;
+  color: blue;
+}
+
+#name {
+  color: black;
+  border-width: thin;
+  border-color: black;
+}
+
+#code {
+  color: black;
+  border-width: thin;
+  border-color: black;
+}
+
+#address {
+  color: black;
+  border-width: thin;
+  border-color: black;
+}
+
+#latitude {
+  color: black;
+  border-width: thin;
+  border-color: black;
+}
+
+#longitude {
+  color: black;
+  border-width: thin;
+  border-color: black;
+}
+
+#submitButton {
+  color: black;
+}
