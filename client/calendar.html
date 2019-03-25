@@ -10,7 +10,21 @@
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="script.js"></script>
-  <iframe class="g-calendar" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=s9ckmeoukacnb3mtdjfcqafv8k%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FNew_York" style="border-width:0" width="700" height="500" frameborder="0" scrolling="no"></iframe>
+    
+</head>
+
+<body>
+    
+    <div id="nav-placeholder">
+      </div>
+
+<script>
+$(function(){
+  $("#nav-placeholder").load("navbar.html");
+}); </script>
+    
+    
+      <iframe class="g-calendar" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=s9ckmeoukacnb3mtdjfcqafv8k%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FNew_York" style="border-width:0" width="700" height="500" frameborder="0" scrolling="no"></iframe>
   <style>
     .g-signin2 {
       margin-left: 20px;
@@ -26,10 +40,6 @@
   </style>
     
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    
-</head>
-
-<body>
   <div class="g-signin2" data-onsuccess="onSignIn"></div>
   <div class="data">
     <p>Profile Details</p>
@@ -40,14 +50,6 @@
 
 </body>
       
-<div id="nav-placeholder">
-      </div>
-
-<script>
-$(function(){
-  $("#nav-placeholder").load("navbar.html");
-}); </script>
-    
 
       </body>
 
