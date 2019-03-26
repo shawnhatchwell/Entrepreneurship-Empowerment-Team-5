@@ -1,28 +1,20 @@
-ul {
+.navbar-default {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: white;
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
     font-family: "Arial Black", Gadget, sans-serif;
 }
 
-li {
-  float:  left;
+.navbar-default .navbar-nav > li > a {
+  color: black;
 }
 
-li a {
-  display: block;
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: skyblue;
-    font-style: normal;
+    background-color: #97c67d;
 }
