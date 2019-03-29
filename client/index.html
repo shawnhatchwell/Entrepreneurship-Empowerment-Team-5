@@ -1,27 +1,95 @@
+<!-- HOME PAGE -->
 <!DOCTYPE html>
 <html>
 
+    <!--navbar script-->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="js/homeScript.js"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
 <head>
-  <title>Empowerment</title>
-    <link rel="stylesheet" type="text/css" href="index.css">
-  </style>
+
+    
 </head>
 
-<body>
-    <div class = "nav">
-        <ul>
-            <li><a href="#home">Logo</a></li>
-            <li><a href="#aboutus">About Us</a></li>
-            <li><a href="calendar.html">Calendar</a></li>
-            <li><a href="#SPODER">SPODER</a></li>
-            <li><a href="#affliates">Affliates</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#resources">Resources</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#signin">Sign In</a></li>
-        </ul>
+<body onload="currentSlide(1)">
+    
+    <!-- START navbar placeholder -->
+    <div id="nav-placeholder"></div>
+    
+    <script>
+        $(function(){
+            $("#nav-placeholder").load("navbar.html");
+        });
+    </script>
+    <!-- END navbar -->
+    
+    <!--START slideshow -->
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <img src="images/img1.jpg">
+        </div>
+        
+        <div class="mySlides">
+            <img src="images/img2.jpg">
+        </div>
+        
+        <div class="mySlides">
+            <img src="images/img3.jpg">
+        </div>
+        
+        <!-- arrow buttons -->
+        <a class="prev" onclick="nextSlide(-1)">&#10094;</a>
+        <a class="next" onclick="nextSlide(1)">&#10095;</a>
     </div>
-
+    <br>
+    
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    
+    <!-- END slideshow -->
+    <!-- CONTENT -->
+    
+    <div class="content">
+    <!-- START Middle Page Information -->
+    <div class="midSec">
+        <div class="col-6 img">
+            <p>This area will be filled with a supplementing picture</p>
+        </div>
+        <div class="col-6 about">
+            <p>This area will be filled with a short summary of information</p>
+        </div>
+    </div>
+    <!--- END Middle Page Information -->
+    
+    <!-- START Icon Link Area -->
+    <div class="icon">
+        <div class = "col-3 circle">
+         <a href="aboutus.html"><img src="images/circle.png"alt="About Us"></a>
+        </div>
+        
+        <div class = "col-3 circle">
+            <a href="spoder.html"><img src="images/circle.png" alt="SPODER" style="opacity: .75"></a>
+        </div>
+        
+        <div class = "col-3 circle">
+           <a href="calendar.html"><img src="images/circle.png" alt="Calendar" style="opacity: .5"></a>
+        </div>
+        
+        <div class = "col-3 circle">
+           <a href="signin.html"><img src="images/circle.png" alt="Sign In" style="opacity: .2"></a>
+        </div>
+    </div>
+        
+    <!-- END Icon Link Area --> 
+    
+    </div>
+    
 </body>
 
 </html>

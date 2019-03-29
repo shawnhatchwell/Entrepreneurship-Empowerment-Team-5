@@ -1,6 +1,7 @@
+
 /* Slideshow Script */
 var slideIndex = 1;
-show(slideIndex);
+show();
 
 function nextSlide(n) {
     show(slideIndex += n);
@@ -23,7 +24,7 @@ function show(n) {
         slideIndex = slides.length;
     }
     
-    for(index = 0; index < dots.length; index++) {
+    for(index = 0; index < slides.length; index++) {
         slides[index].style.display = "none";
     }
     
@@ -31,6 +32,6 @@ function show(n) {
         dots[index].className = dots[index].className.replace(" active","");
     }
     
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
+    slides[slideIndex-1].style.display = "block"; 
+    dots[slideIndex-1].className += " active";
 }
