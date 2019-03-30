@@ -141,7 +141,8 @@ p {
     width: 25%;
 }
 
-.icon {display: flex;
+.icon {
+    display: flex;
     flex-direction: row;
     object-position: center;
 }
