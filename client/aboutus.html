@@ -9,8 +9,7 @@
     
 </head>
 
-<body>
-<h1> About Us</h1>
+<body onload="currentSlide(1)">
 <div id="nav-placeholder">
 
 </div>
@@ -20,6 +19,58 @@ $(function(){
   $("#nav-placeholder").load("navbar.html");
 }); 
     </script>
+    
+    
+    <!--START slideshow -->
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <img src="images/img1.jpg">
+        </div>
+        
+        <div class="mySlides">
+            <img src="images/img2.jpg">
+        </div>
+        
+        <div class="mySlides">
+            <img src="images/img3.jpg">
+        </div>
+        
+        <!-- arrow buttons -->
+        <a class="prev" onclick="nextSlide(-1)">&#10094;</a>
+        <a class="next" onclick="nextSlide(1)">&#10095;</a>
+    </div>
+    <br>
+    
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    
+    <!-- END slideshow -->
+    
+    <div class="content">
+    <!-- START left col content -->
+    <div class="leftCol">
+        <p> hello</p>
+    </div>
+    
+    <!-- END left col content -->
+    
+    <!-- START right col cotent -->
+    <div class="rightCol">
+        <div class="faq" style="border: 5px white solid">
+            <p>oof</p>
+        </div>
+        <div class="contactUs" style="border: 5px white solid">
+            <p>oop</p>
+        </div>
+    </div>
+    
+    <!-- END right col content -->
+        
+    </div>
     
 </body>
 

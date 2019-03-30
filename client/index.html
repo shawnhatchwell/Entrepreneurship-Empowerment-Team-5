@@ -4,8 +4,6 @@
 
     <!--navbar script-->
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script type="text/javascript" src="js/homeScript.js"></script>
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 <head>
@@ -13,7 +11,7 @@
     
 </head>
 
-<body onload="currentSlide(1)">
+<body>
     
     <!-- START navbar placeholder -->
     <div id="nav-placeholder"></div>
@@ -25,34 +23,14 @@
     </script>
     <!-- END navbar -->
     
-    <!--START slideshow -->
-    <div class="slideshow-container">
-        <div class="mySlides">
-            <img src="images/img1.jpg">
-        </div>
-        
-        <div class="mySlides">
-            <img src="images/img2.jpg">
-        </div>
-        
-        <div class="mySlides">
-            <img src="images/img3.jpg">
-        </div>
-        
-        <!-- arrow buttons -->
-        <a class="prev" onclick="nextSlide(-1)">&#10094;</a>
-        <a class="next" onclick="nextSlide(1)">&#10095;</a>
-    </div>
-    <br>
+    <!-- START welcome image -->
     
-    <!-- The dots/circles -->
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span> 
-        <span class="dot" onclick="currentSlide(2)"></span> 
-        <span class="dot" onclick="currentSlide(3)"></span>
+    <div class="welcome">
+        <img src="images/welcome.jpg" alt="Welcome">
     </div>
     
-    <!-- END slideshow -->
+
+    
     <!-- CONTENT -->
     
     <div class="content">
