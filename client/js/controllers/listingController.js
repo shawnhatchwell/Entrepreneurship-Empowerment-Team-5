@@ -1,39 +1,38 @@
 angular.module('listings').controller('ListingsController', ['$scope', 'Listings',
-    function($scope, Listings) {
-        Listings.getAll().then(function(response) {
-            $scope.listings = response.data
-        }, function(error) {
-            console.log('Unable to retrieve listings:', error)
-        })
+  function($scope, Listings) {
+    /* Get all the listings, then bind it to the scope */
+    Listings.getAll().then(function(response) {
+      $scope.listings = response.data;
+    }, function(error) {
+      console.log('Unable to retrieve listings:', error);
+    });
 
-        $scope.detailedInfo = undefined
-        $scope.addListing = function() {
-            $scope.listings.push($scope.newListing);//push new listing
-            $scope.newListing = {}
-        }
+    $scope.detailedInfo = undefined;
 
-        $scope.deleteListing = function(code) {
-            let index = fixTableError(code)//using function at bottom
-            if (index !== null) {
-              $scope.listings.splice(index, 1);
-            }
-        }
+    $scope.addListing = function() {
+	  /**TODO
+	  *Save the article using the Listings factory. If the object is successfully
+	  saved redirect back to the list page. Otherwise, display the error
+	 */
+	 /*Make object, push, create*/
+		$scope.listings.push($scope.newListing);
+		Listings.create($scope.newListing);
+    alert($scope.newListing.emailaddress + " has been added")
+    };
 
-        $scope.showDetails = function(code) {
-            let index = fixTableError(code)
+    $scope.deleteListing = function(id, index) {
+	   /**TODO
+        Delete the article using the Listings factory. If the removal is successful,
+		navigate back to 'listing.list'. Otherwise, display the error.
+       */
+	   	if (confirm('Are you sure you want to delete "' + $scope.listings[index].name + '"?')) {
+			$scope.listings.splice(index,1);
+			Listings.delete(id);
+		}
+    };
 
-            if (index !== null){
-              $scope.detailedInfo = $scope.listings[index];//in order to find the right index that the user clicks
-            }
-        }
-
-        function fixTableError(code) {
-            for (let i = 0; i < $scope.listings.length; i++){//function for finding the right object
-                if ($scope.listings[i]._id == code){
-                    return i
-                }
-            }
-            return null
-        }
-    }
-])
+    $scope.showDetails = function(index) {
+      $scope.detailedInfo = $scope.listings[index];
+    };
+  }
+]);
