@@ -3,7 +3,6 @@
 
 module.exports = {
   db: {
-    uri: 'mongodb://willcosker:dbpass123@ds041992.mlab.com:41992/bootcamp3wcosker', //place the URI of your mongo database here.
-  },
-  port: process.env.PORT
+    uri: 'mongodb://dbuser:user123@ds151602.mlab.com:51602/eeemails', //place the URI of your mongo database here.
+  }
 };
