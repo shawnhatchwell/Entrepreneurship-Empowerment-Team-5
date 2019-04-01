@@ -39,28 +39,20 @@ exports.read = function(req, res) {
 /* Update a listing */
 exports.update = function(req, res) {
   var listing = req.listing;
-
   /** TODO **/
   /* Replace the article's properties with the new properties found in req.body */
+  listing.firstname = req.body.firstname;
+  listing.lastname = req.body.lastname;
+  listing.emailaddress = req.body.emailaddress;
   /* Save the article */
-  listing.code = req.body.code;
-  listing.name = req.body.name;
-  listing.address = req.body.address;
-  if (req.results){
-    listing.coordinates = {
-      latitude: req.results.lat,
-      longitude: req.results.longitude
-    };
-    }
-  listing.save(function(err){
-    if (err){
+  listing.save(function(err) {
+    if(err) {
       console.log(err);
       res.status(400).send(err);
-    }
-    else{
+    } else {
       res.json(listing);
     }
-  })
+  });
 };
 
 /* Delete a listing */
@@ -68,30 +60,31 @@ exports.delete = function(req, res) {
   var listing = req.listing;
 
   /** TODO **/
-  /* Remove the article */
-  listing.remove(function (err){
-    if (err){
+  listing.remove(function(err,doc) {
+	if(err) {
       console.log(err);
       res.status(400).send(err);
     }
-    else {
-      res.end();
-    }
-  })
+	else{
+		 res.json(doc);
+	}
+  });
+  /* Remove the article */
 };
 
 /* Retreive all the directory listings, sorted alphabetically by listing code */
 exports.list = function(req, res) {
   /** TODO **/
   /* Your code here */
-  Listing.find().sort('code').exec(function(err,listings){
-    if (err){
+    Listing.find().sort('code').exec(function(err, result) {
+	if (err) {
+      console.log(err);
       res.status(400).send(err);
-    }
-    else{
-      res.json(listings);
-    }
-  })
+	}
+	else{
+		res.json(result);
+	}
+	});
 };
 
 /*

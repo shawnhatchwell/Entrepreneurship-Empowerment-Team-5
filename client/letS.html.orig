@@ -1,0 +1,44 @@
+<!-- LETTER: S PAGE -->
+<!DOCTYPE html>
+<html>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    
+<head>
+
+    
+</head>
+
+<body>
+
+<div id="nav-placeholder">
+
+</div>
+
+<script>
+$(function(){
+  $("#nav-placeholder").load("navbar.html");
+}); </script>
+<<<<<<< HEAD
+    
+    <div class="letHead">
+        <h1>S Meaning</h1>
+        <p>Background Info</p>
+    </div>
+    
+    <div class="recResrouces">
+    
+    </div>
+    
+    <div class="archive">
+
+    </div>
+    
+=======
+   
+<p>The framework begins with development of a <b style="font-size:20px">supportive infrastructure</b>. Low income neighborhoods generally lack an entrepreneurial ecosystem, and the poor struggle to tap into whatever ecosystems exist within the larger community or region. Importantly, the infrastructure must reflect the unique conditions and needs of the poor, as outlined earlier in this chapter. Key infrastructure elements include education/training mechanisms, availability of finance, incubators/accelerators, a supportive business community, vehicles for social networking/connecting, small business support organizations, small business service providers, entrepreneurial role models, and entrepreneurial mentors, among others. </p>
+   
+>>>>>>> 483fe3a0f386be8290cd9a801c1da1e784175708
+</body>
+
+</html>
