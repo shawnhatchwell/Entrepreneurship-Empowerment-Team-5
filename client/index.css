@@ -193,13 +193,60 @@ p {
   to {opacity: 1}
 }
 
+/* Content */
+
 .leftCol {
     float: left;
-    width: 75%;
+    width: 60%;
 }
 
 .rightCol {
     float: left;
-    width 25%;
+    width: 40%;
     background-color: #97c67d;
+}
+
+/* SPODER Page */
+
+.SPODERbanner {
+    background-color: #97c67d;
+    padding: 15px;
+    max-height: 50%;
+    max-width: 100%;
+    overflow: hidden;
+    margin: auto;
+    position:relative;
+}
+
+.SPODERbanner > img {
+    height: 100%;
+    width: 100%;
+}
+
+.SPODERbanner .SPODERbannertext {
+    color: white;
+    position: absolute;
+    top: 10px;
+}
+
+.resources{
+    float: left;
+    width: 30%;
+    padding: 15px;
+    background-color: darkgrey;
+    color: white;
+    height: inherit;
+}
+
+.resources .resourcesList {
+    background-color: white;
+    color: black;
+    padding: 5px;
+}
+
+
+.letters {
+    padding: 15px;
+    float: left;
+    width: 70%;
 }
