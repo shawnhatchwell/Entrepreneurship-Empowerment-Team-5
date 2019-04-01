@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -9,30 +8,55 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="script.js"></script>
-    
+
 </head>
-
-<body>
-    
-    <div id="nav-placeholder">
-
-
-<script>
-$(function(){
+<div>
+  <div id="nav-placeholder">
+    <script>
+      $(function(){
   $("#nav-placeholder").load("navbar.html");
 }); </script>
-         </div> 
-    
-      <iframe class="g-calendar" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=s9ckmeoukacnb3mtdjfcqafv8k%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FNew_York" style="border-width:0" width="700" height="500" frameborder="0" scrolling="no"></iframe>
-  <style>
-    .g-calendar {
+  </div>
+  <div class="div">
+    <iframe class="g-calendar" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=s9ckmeoukacnb3mtdjfcqafv8k%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FNew_York" style="border-width:0"
+      width="700" height="500" frameborder="0" scrolling="no"></iframe>
+    <style>
+      .g-calendar {
       margin-left: 60px;
       margin-top: 20px;
     }
   </style>
-    
-      
-
-      </body>
+  </div>
+  <div class="formdiv">
+    <form novalidate class="simple-form" >
+      <h2>Add Event to Calendar</h2>
+      Email: <input type="text" ng-model="newListing.code" /><br /><br />
+      Name: <input type="text" ng-model="newListing.name" /><br /><br />
+      Address: <input type="text" ng-model="newListing.address" /><br /><br />
+      Event: <input type="text" ng-model="newListing.name" /><br /><br />
+      <button class="btn btn-primary" ng-click="addListing()">Add Listing</button>
+    </form>
+    <form action="https://www.SnapHost.com/captcha/send.aspx" method="post" id="myform" target="_top">
+<input type="hidden" id="skip_WhereToSend" name="skip_WhereToSend"
+value="your@email.com" />
+<input type="hidden" id="skip_Subject" name="skip_Subject"
+value="SnapHost.com script" />
+<input type="hidden" id="skip_WhereToReturn" name="skip_WhereToReturn"
+value="www.yourdomain.com/thankyou.htm" />
+<input type="hidden" id="skip_SnapHostID" name="skip_SnapHostID"
+value="2UXAPBWKLHU8" />
+  </div>
+  <style>
+  .formdiv{
+    float: left;
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+  </style>
+  <style>
+  .div{
+    float: left;
+  }
+  </style>
 
 </html>
