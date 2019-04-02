@@ -29,12 +29,26 @@
   </div>
   <div class="formdiv">
     <form novalidate class="simple-form" >
-      <h2>Add Event to Calendar</h2>
-      Email: <input type="text" ng-model="newListing.code" /><br /><br />
-      Name: <input type="text" ng-model="newListing.name" /><br /><br />
-      Address: <input type="text" ng-model="newListing.address" /><br /><br />
-      Event: <input type="text" ng-model="newListing.name" /><br /><br />
-      <button class="btn btn-primary" ng-click="addListing()">Add Listing</button>
+      <h2>Request to Add Event to Calendar</h2>
+      <table>
+		  <tr>
+			<td>Email:</td>
+			<td><input type="text" ng-model="newListing.code" /></td>
+		  </tr>
+		  <tr>
+			<td>Name:</td>
+			<td><input type="text" ng-model="newListing.name" /></td>
+		  </tr>
+		  <tr>
+			<td>Address:</td>
+			<td><input type="text" ng-model="newListing.address" /></td>
+		  </tr>
+		  <tr>
+			<td>Event:</td>
+			<td><input type="text" ng-model="newListing.name" /></td>
+		  </tr>
+	  </table>
+	  <button class="btn btn-primary" ng-click="addListing()">Request Event</button>
     </form>
     <form action="https://www.SnapHost.com/captcha/send.aspx" method="post" id="myform" target="_top">
 <input type="hidden" id="skip_WhereToSend" name="skip_WhereToSend"
