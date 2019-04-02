@@ -4,5 +4,6 @@
 module.exports = {
   db: {
     uri: 'mongodb://dbuser:user123@ds151602.mlab.com:51602/eeemails', //place the URI of your mongo database here.
+	uriR: 'mongodb://dbuser:user123@ds151602.mlab.com:51602/resources'
   }
 };
