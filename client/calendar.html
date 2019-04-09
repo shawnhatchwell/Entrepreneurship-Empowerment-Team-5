@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+<script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+<script src="js/app.js"></script>
+<script src="js/factories/eventFactory.js"></script>
+<script src="js/controllers/eventController.js"></script>
 
 <head>
   <title>Google SignIn</title>
@@ -13,64 +20,65 @@
 <div>
   <div id="nav-placeholder">
     <script>
-      $(function(){
-  $("#nav-placeholder").load("navbar.html");
-}); </script>
+      $(function() {
+        $("#nav-placeholder").load("navbar.html");
+      });
+    </script>
   </div>
   <div class="div">
-    <iframe class="g-calendar" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=s9ckmeoukacnb3mtdjfcqafv8k%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FNew_York" style="border-width:0"
-      width="700" height="500" frameborder="0" scrolling="no"></iframe>
+    <iframe class="g-calendar" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=s9ckmeoukacnb3mtdjfcqafv8k%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FNew_York"
+      style="border-width:0" width="700" height="500" frameborder="0" scrolling="no"></iframe>
     <style>
       .g-calendar {
-      margin-left: 60px;
-      margin-top: 20px;
-    }
-  </style>
+        margin-left: 60px;
+        margin-top: 20px;
+      }
+    </style>
   </div>
-  <div class="formdiv">
-    <form novalidate class="simple-form" >
+  <div class="formdiv" ng-controller="ListingsController">
+      <form novalidate class="simple-form">
       <h2>Request to Add Event to Calendar</h2>
       <table>
-		  <tr>
-			<td>Email:</td>
-			<td><input type="text" ng-model="newListing.code" /></td>
-		  </tr>
-		  <tr>
-			<td>Name:</td>
-			<td><input type="text" ng-model="newListing.name" /></td>
-		  </tr>
-		  <tr>
-			<td>Address:</td>
-			<td><input type="text" ng-model="newListing.address" /></td>
-		  </tr>
-		  <tr>
-			<td>Event:</td>
-			<td><input type="text" ng-model="newListing.name" /></td>
-		  </tr>
-	  </table>
-	  <button class="btn btn-primary" ng-click="addListing()">Request Event</button>
+        <tr>
+          <td>Email:</td>
+          <td><input type="email" ng-model="newEvent.emailaddress" /></td>
+        </tr>
+        <tr>
+          <td>Name:</td>
+          <td><input type="text" ng-model="newEvent.name" /></td>
+        </tr>
+        <tr>
+          <td>Address:</td>
+          <td><input type="text" ng-model="newEvent.address" /></td>
+        </tr>
+        <tr>
+          <td>Event:</td>
+          <td><input type="text" ng-model="newEvent.event" /></td>
+        </tr>
+        <tr>
+          <td>Date:</td>
+          <td><input type="text" ng-model="newEvent.date" /></td>
+        </tr>
+      </table>
+      <button class="btn btn-primary" ng-click="addEvent()">Request Event</button>
     </form>
     <form action="https://www.SnapHost.com/captcha/send.aspx" method="post" id="myform" target="_top">
-<input type="hidden" id="skip_WhereToSend" name="skip_WhereToSend"
-value="your@email.com" />
-<input type="hidden" id="skip_Subject" name="skip_Subject"
-value="SnapHost.com script" />
-<input type="hidden" id="skip_WhereToReturn" name="skip_WhereToReturn"
-value="www.yourdomain.com/thankyou.htm" />
-<input type="hidden" id="skip_SnapHostID" name="skip_SnapHostID"
-value="2UXAPBWKLHU8" />
+      <input type="hidden" id="skip_WhereToSend" name="skip_WhereToSend" value="your@email.com" />
+      <input type="hidden" id="skip_Subject" name="skip_Subject" value="SnapHost.com script" />
+      <input type="hidden" id="skip_WhereToReturn" name="skip_WhereToReturn" value="www.yourdomain.com/thankyou.htm" />
+      <input type="hidden" id="skip_SnapHostID" name="skip_SnapHostID" value="2UXAPBWKLHU8" />
   </div>
   <style>
-  .formdiv{
-    float: left;
-    margin-top: 30px;
-    margin-left: 30px;
-  }
+    .formdiv {
+      float: left;
+      margin-top: 30px;
+      margin-left: 30px;
+    }
   </style>
   <style>
-  .div{
-    float: left;
-  }
+    .div {
+      float: left;
+    }
   </style>
 
 </html>
