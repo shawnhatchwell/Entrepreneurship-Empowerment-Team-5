@@ -7,7 +7,6 @@
 <script src="js/app.js"></script>
 <script src="js/factories/eventFactory.js"></script>
 <script src="js/controllers/eventController.js"></script>
-
 <head>
   <title>Google SignIn</title>
   <!-- Latest compiled and minified CSS -->
@@ -17,6 +16,7 @@
   <script src="script.js"></script>
 
 </head>
+<body ng-app="directoryApp">
 <div>
   <div id="nav-placeholder">
     <script>
@@ -35,7 +35,7 @@
       }
     </style>
   </div>
-  <div class="formdiv" ng-controller="ListingsController">
+  <div class="formdiv" ng-controller="EventsController">
       <form novalidate class="simple-form">
       <h2>Request to Add Event to Calendar</h2>
       <table>
@@ -80,5 +80,5 @@
       float: left;
     }
   </style>
-
+</body>
 </html>

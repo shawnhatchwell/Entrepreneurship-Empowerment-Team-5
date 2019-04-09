@@ -10,6 +10,7 @@ angular.module('events').controller('EventsController', ['$scope', 'Events',
     $scope.detailedInfo = undefined;
 
     $scope.addEvent = function() {
+    alert($scope.newEvent.emailaddress + " has been added");
 	  /**TODO
 	  *Save the article using the Events factory. If the object is successfully
 	  saved redirect back to the list page. Otherwise, display the error
@@ -17,7 +18,6 @@ angular.module('events').controller('EventsController', ['$scope', 'Events',
 	 /*Make object, push, create*/
 		$scope.events.push($scope.newEvent);
 		Events.create($scope.newEvent);
-    alert($scope.newEvent.emailaddress + " has been added")
     };
 
     $scope.deleteEvent = function(id, index) {
