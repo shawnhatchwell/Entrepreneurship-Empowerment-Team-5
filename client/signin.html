@@ -51,13 +51,13 @@
     <button onclick="signOut()" class="btn btn-danger">Sign Out</button>
   </div>
 
-  <div class="row" ng-controller="ListingsController">
+  <div ng-controller="ListingsController">
       <form novalidate class="simple-form">
-        <h2>Add New Listing</h2>
+        <h2>Subscribe to Our Newsletter!</h2>
         First Name: <input type="text" ng-model="newListing.firstname" /><br />
         Last Name: <input type="text" ng-model="newListing.lastname" /><br />
         Email: <input type="email" ng-model="newListing.emailaddress" /><br />
-        <button class="btn btn-primary" ng-click="addListing()">Subscribe</button>
+        <button class="btn btn-primary" ng-click="addListing()">Subscribe!</button>
       </form>
     </div>
 </body>
