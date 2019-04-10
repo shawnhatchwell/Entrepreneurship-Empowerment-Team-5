@@ -63,6 +63,8 @@ p {
 
 .col-3 {
     width: 25%;
+	position: relative;
+	text-align:center;
 }
 
 .icon {
@@ -82,6 +84,28 @@ p {
     margin-right: auto;
     max-height: 100%;
     max-width: 80%;
+}
+
+.img_description {
+  border-radius: 50%;
+  position: absolute;
+  top: 130px;
+  bottom: 0;
+  left: 0px;
+  right: 0px;
+  
+  #	background: rgba(29, 106, 154, 0.72);
+  color: #FFF;
+  visibility: hidden;
+  opacity: 0;
+
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+}
+
+.col-3:hover .img_description {
+  visibility: visible;
+  opacity: 1;
 }
 
 /* Middle Section */
