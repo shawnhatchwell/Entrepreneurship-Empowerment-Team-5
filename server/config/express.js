@@ -5,6 +5,7 @@ var path = require('path'),
     bodyParser = require('body-parser'),
     config = require('./config'),
     listingsRouter = require('../routes/listings.server.routes');
+    eventsRouter = require('../routes/events.server.routes');
 	resourcesRouter = require('../routes/resources.server.routes');
 
 module.exports.init = function() {
@@ -30,6 +31,7 @@ module.exports.init = function() {
   /**TODO
   Use the listings router for requests to the api */
   app.use('/api/listings', listingsRouter);
+  app.use('/api/events', eventsRouter);
   app.use('/api/resources', resourcesRouter);
 
   /**TODO
@@ -39,4 +41,4 @@ module.exports.init = function() {
   });
 
   return app;
-};  
+};

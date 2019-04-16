@@ -8,6 +8,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/factories/listingFactory.js"></script>
+  <script src="js/controllers/listingController.js"></script>
+
+  <meta name="google-signin-client_id" content="766408943021-qrlvr252ltp6i2bnkeenuap42l2igruk.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
        
     <nav class="navbar fixed-top navbar-default">
         <div class="container-fluid">
@@ -26,13 +34,55 @@
           
           <li><a href="spoder.html">SPODER</a></li>
           
-          <li><a href="affiliates.html">Affiliates</a></li>
+          <li><a href="partners.html">Partners</a></li>
           <li><a href="blog.html">Blog</a></li>
-          <li><a href="forum.html">Forum</a></li>
           <li><a href="resources.html">Resources</a></li>
           <li><a href="research.html">Research</a></li>
-          <li><a href="signin.html">Sign In</a></li>
-        
+          <li>
+              <button onclick="document.getElementById('login').style.display='block'" style="width:auto;">Login</button>
+              
+              <div id="login" class="modal">
+                  <form action="navbar.html" class="modal-content animate">
+                  
+                  <div class="container">
+                      <label for="username"><b>E-mail</b></label>
+                      <input type="text" placeholder="Enter Your E-mail" name="E-mail" required>
+                      
+                      <label for="password"><b>Password</b></label>
+                      <input type="password" placeholder="Enter Your Password">
+                      
+                      <button type="submit">Login</button>
+                      </div>
+                      
+                       <div class="container">
+                           <button type="button" onclick="document.getElementById('login').style.display='none'" class="cancelbtn">Cancel</button>
+                      </div>
+                     
+                      <style>   
+                         .g-signin2 {
+                             margin-left: 20px;
+                             margin-top: 20px;
+                             padding: inherit;
+                         }
+                          
+                          .data {
+                              display: none;
+                          }
+                      </style> 
+                      
+                      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+                      <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                      <div class="data">
+                          <p>Profile Details</p>
+                          <img id="pic" class="img-circle" width="100" height="100" />
+                          <p>Email Address</p>
+                          <p id="email" class="alert alert-danger"></p><button onclick="signOut()" class="btn btn-danger">Sign Out</button>
+                      </div>
+                  </form>
+              
+              </div>
+          </li>
+          
             </ul>
         </div>
     </nav>

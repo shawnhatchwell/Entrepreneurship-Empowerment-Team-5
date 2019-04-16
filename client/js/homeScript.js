@@ -35,3 +35,13 @@ function show(n) {
     slides[slideIndex-1].style.display = "block"; 
     dots[slideIndex-1].className += " active";
 }
+
+/* Login Script */
+
+var modal = document.getElementById('login');
+
+window.onclick = function(event) {
+    if(event.target == modal) {
+        modal.style.display = "none";
+    }
+}

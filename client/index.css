@@ -23,17 +23,42 @@ p {
     background-color: #97c67d;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
 .content {
     padding: 15px;
 }
+
+/* LOGIN BOX */
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: inherit;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #97c67d;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: lightgrey;
+    color: black;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: inherit;
+    background-color: red;
+}
+
+.container {
+    padding: inherit;
+}
+
 
 /* INDEX CSS */
 
@@ -63,6 +88,8 @@ p {
 
 .col-3 {
     width: 25%;
+	position: relative;
+	text-align:center;
 }
 
 .icon {
@@ -82,6 +109,28 @@ p {
     margin-right: auto;
     max-height: 100%;
     max-width: 80%;
+}
+
+.img_description {
+  border-radius: 50%;
+  position: absolute;
+  top: 130px;
+  bottom: 0;
+  left: 0px;
+  right: 0px;
+  
+  #	background: rgba(29, 106, 154, 0.72);
+  color: #FFF;
+  visibility: hidden;
+  opacity: 0;
+
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+}
+
+.col-3:hover .img_description {
+  visibility: visible;
+  opacity: 1;
 }
 
 /* Middle Section */
