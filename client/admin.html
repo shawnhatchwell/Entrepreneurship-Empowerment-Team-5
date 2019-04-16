@@ -32,8 +32,7 @@
                 <th></th>
               </tr>
               <tr ng-repeat="listing in listings | filter: query" ng-click="showDetails(listing._id)">
-                <td>{{listing.name}}</td>
-                <td>{{listing.event}}</td>
+                <td>{{listing.emailaddress}}</td>
                 <td ng-click="deleteListing(listing._id)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>
               </tr>
             </table>
@@ -56,5 +55,7 @@
     <script src="js/app.js"></script>
     <script src="js/factories/calEvent.js"></script>
     <script src="js/controllers/calEventFactory.js"></script>
+    <script src="js/factories/listingFactory.js"></script>
+    <script src="js/controllers/listingController.js"></script>
   </body>
 </html>
