@@ -20,7 +20,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         Delete the article using the Listings factory. If the removal is successful,
 		navigate back to 'listing.list'. Otherwise, display the error.
        */
-	   	if (confirm('Are you sure you want to delete "' + $scope.listings[index].name + '"?')) {
+	   	if (confirm('Are you sure you want to delete "' + $scope.listings[index].emailaddress + '"?')) {
 			$scope.listings.splice(index,1);
 			Listings.delete(id);
 		}
