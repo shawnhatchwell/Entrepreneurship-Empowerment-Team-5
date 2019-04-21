@@ -76,7 +76,7 @@ exports.delete = function(req, res) {
 exports.list = function(req, res) {
   /** TODO **/
   /* Your code here */
-    Listing.find().sort('code').exec(function(err, result) {
+    Listing.find().sort('emailaddress').exec(function(err, result) {
 	if (err) {
       console.log(err);
       res.status(400).send(err);
