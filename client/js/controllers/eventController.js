@@ -10,7 +10,7 @@ angular.module('events').controller('EventsController', ['$scope', 'Events',
     $scope.detailedInfo = undefined;
 
     $scope.addEvent = function() {
-    alert($scope.newEvent.emailaddress + " has been added");
+    alert($scope.newEvent.event + " has been added");
 	  /**TODO
 	  *Save the article using the Events factory. If the object is successfully
 	  saved redirect back to the list page. Otherwise, display the error

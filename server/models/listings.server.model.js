@@ -6,15 +6,12 @@ var mongoose = require('mongoose'),
 var listingSchema = new Schema({
   firstname: {
     type: String,
-    required: true
   },
   lastname: {
     type: String,
-    required: true,
   },
   emailaddress: {
     type: String,
-    required: true,
   },
   created_at: Date,
   updated_at: Date

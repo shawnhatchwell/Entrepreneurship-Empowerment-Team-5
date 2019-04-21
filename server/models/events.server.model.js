@@ -6,23 +6,18 @@ var mongoose = require('mongoose'),
 var eventSchema = new Schema({
   emailaddress: {
     type: String,
-    required: true
   },
   name: {
     type: String,
-    required: true,
   },
   address: {
     type: String,
-    required: true,
   },
   event: {
     type: String,
-    required: true,
   },
   date: {
     type: String,
-    required: true,
   },
   created_at: Date,
   updated_at: Date
