@@ -5,7 +5,9 @@ var path = require('path'),
     bodyParser = require('body-parser'),
     config = require('./config'),
     listingsRouter = require('../routes/listings.server.routes');
-	resourcesRouter = require('../routes/resources.server.routes');
+    eventsRouter = require('../routes/events.server.routes');
+	resourcesRouter = require('../routes/resources.server.routes'),
+  adminRouter = require('../routes/admintest.routes');
 
 module.exports.init = function() {
   //connect to database
@@ -20,6 +22,7 @@ module.exports.init = function() {
 
   //body parsing middleware
   app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: false}));
 
 
   /**TODO
@@ -30,7 +33,9 @@ module.exports.init = function() {
   /**TODO
   Use the listings router for requests to the api */
   app.use('/api/listings', listingsRouter);
+  app.use('/api/events', eventsRouter);
   app.use('/api/resources', resourcesRouter);
+  app.use('/admin', adminRouter);
 
   /**TODO
   Go to homepage for all routes not specified */
@@ -39,4 +44,4 @@ module.exports.init = function() {
   });
 
   return app;
-};  
+};

@@ -1,73 +1,163 @@
 <!-- HOME PAGE -->
 <!DOCTYPE html>
+
+
 <html>
 
     <!--navbar script-->
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+    <script src="js/factories/listingFactory.js"></script>
+    <script src="js/controllers/listingController.js"></script>
+
 <head>
 
-    
+
 </head>
 
-<body>
-    
+<body ng-app="directoryApp">
+
     <!-- START navbar placeholder -->
     <div id="nav-placeholder"></div>
-    
+
     <script>
         $(function(){
             $("#nav-placeholder").load("navbar.html");
         });
     </script>
     <!-- END navbar -->
-    
+    <style>
+      .button {
+        background-color: #97C67D;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        width: 100%;
+        height: auto;
+      }
+
+      .button:hover {
+        background-color: #b7d8a4;
+      }
+      input[type=email] {
+        width: 100%;
+        margin-bottom: 1.5%;
+        margin-top: 1.5%;
+      }
+      input[type=text] {
+        width: 100%;
+      }
+    </style>
+
+
     <!-- START welcome image -->
-    
+
     <div class="welcome">
         <img src="images/welcome.jpg" alt="Welcome">
     </div>
-    
 
-    
+
+  <button type="button" class="button" data-toggle="modal" data-target="#myModal">Subscribe to our newsletter!</button>
+
+  <div id="myModal" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">
+          </h4>
+        </div>
+        <div class="modal-body">
+          <h3><b><center>Subscribe to our newsletter!</center></b></h3>
+          <br>
+          <div class="formdiv" ng-controller="ListingsController">
+            <form novalidate class="simple-form">
+              First Name:
+              <input type="text" ng-model="newListing.firstname" />
+              Last Name:
+              <input type="text" ng-model="newListing.lastname" />
+              Email Address:
+              <input type="email" ng-model="newListing.emailaddress" />
+              <br>
+              <br>
+              <button class="button" ng-click="addListing()">Subscribe</button>
+            </form>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
     <!-- CONTENT -->
-    
+
     <div class="content">
     <!-- START Middle Page Information -->
-    <div class="midSec">
-        <div class="col-6 img">
-            <p>This area will be filled with a supplementing picture</p>
+    <div class="midSec" style="display: flex">
+        <div class="col-6 img" style="flex:1">
+            <a href="https://www.amazon.com/Poverty-Entrepreneurship-Developed-Economies-Michael/dp/1788111532" rel="noopener noreferrer" target="_blank">
+			<img style=" width: 50%; height: auto; display: block; margin-left: auto; margin-right: auto; " hspace="25", src="images/bookcover.png">
+			</a>
         </div>
-        <div class="col-6 about">
-            <p>This area will be filled with a short summary of information</p>
+        <div class="col-6 about" style="flex:1">
+            <p><i>'These authors take an in-depth look at poverty in developed countries and offer the unique solution of entrepreneurship's empowering and transformative venture creation impact to the problem. They introduce a framework as a holistic approach for understanding what is required for the low-income individual to successfully pursue the entrepreneurial path. For anyone concerned about the alleviation of poverty, this is a must read!'
+				</i><br>- Donald F. Kuratko, Indiana University, Bloomington, US
+				<br><br><i>'Poor people are more frequently business owners than any other economic group, but, because of resource constraints, they rarely break out of the informal economy so their entrepreneurship co-exists with poverty rather than replacing it. Could we reduce the resource constraints and simultaneously educate poor people about business management and strategy, more poor people could break into the formal sector, creating jobs and building wealth exactly where jobs and wealth are most needed. The social benefit would be huge.  In their pragmatic, informed, and readable manual, Morris, Santos, and Neumeyer bring together the inter-disciplinary information that a public/private partnership requires to launch a successful effort to reduce poverty by enabling the entrepreneurship of the poor. In a nutshell, the public sector provides the infrastructure; the private sector and NGOs provide the business education. Everyone who has a practical or theoretical interest in poverty, entrepreneurship, or social policy should read this book.'
+				</i><br>- Ivan Light, University of California, Los Angeles, US
+				<br><br>
+				While extensively explored as a solution to poverty at the base of the pyramid, this is the first in-depth examination of entrepreneurship and the poor within advanced economies. Entrepreneurship is presented as a source of empowerment that represents an alternative pathway out of poverty. The book explores the underlying nature of poverty and draws implications for new venture creation.
+				<br><br>
+				This book fosters a richer dialog among academics, government officials, policy makers, economic development professionals, bankers and the financial community, leaders of non-profit organizations, and others committed to moving beyond status quo solutions - committed to finding ways to help people create their own entrepreneurial pathways out of poverty.</p>
         </div>
     </div>
     <!--- END Middle Page Information -->
-    
+
     <!-- START Icon Link Area -->
     <div class="icon">
         <div class = "col-3 circle">
-         <a href="aboutus.html"><img src="images/circle.png"alt="About Us"></a>
+         <a href="aboutus.html">
+		 <img src="images/circle.png"alt="About Us">
+		 <p class="img_description">About Us!</p>
+		 </a>
         </div>
-        
+
         <div class = "col-3 circle">
-            <a href="spoder.html"><img src="images/circle.png" alt="SPODER" style="opacity: .75"></a>
+            <a href="spoder.html"><img src="images/spoderhome.png" alt="SPODER">
+			<p class="img_description">The SPODER Model</p>
+			</a>
         </div>
-        
+
         <div class = "col-3 circle">
-           <a href="calendar.html"><img src="images/circle.png" alt="Calendar" style="opacity: .5"></a>
+           <a href="calendar.html"><img src="images/Calendar.png" alt="Calendar">
+		   <p class="img_description">Calendar of Events</p>
+		   </a>
         </div>
-        
+
         <div class = "col-3 circle">
-           <a href="signin.html"><img src="images/circle.png" alt="Sign In" style="opacity: .2"></a>
+           <a href="signin.html"><img src="images/circle.png" alt="Subscribe to our Newsletter" style="opacity: .2">
+		   <p class="img_description">Research</p>
+		   </a>
         </div>
     </div>
-        
-    <!-- END Icon Link Area --> 
-    
+
+    <!-- END Icon Link Area -->
+
     </div>
-    
+
 </body>
 
 </html>
