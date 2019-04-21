@@ -113,7 +113,7 @@ button:hover {
 
 .img_description {
   border-radius: 50%;
-  position: inherit;
+  position: sticky;
   top: 180px;
   bottom: 0;
   left: 0px;
