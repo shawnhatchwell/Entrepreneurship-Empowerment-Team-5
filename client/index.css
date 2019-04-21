@@ -280,11 +280,11 @@ button:hover {
 
 .resources{
     float: left;
-    width: 30%;
-    padding: 15px;
+    width: 45%;
+    padding: 5px;
     background-color: darkgrey;
     color: white;
-    height: inherit;
+    height: 100%;
 }
 
 .resources .resourcesList {
@@ -296,7 +296,7 @@ button:hover {
 .letters {
     padding: 15px;
     float: left;
-    width: 70%;
+    width: 55%;
 }
 
 /* AFFILIATES PAGE */
