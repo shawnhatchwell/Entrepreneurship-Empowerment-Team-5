@@ -88,6 +88,18 @@ button:hover {
     top: 10px;
 }
 
+.JoinNews {
+    width: 50%;
+    background: white;
+    background-color: #c8e8b7;
+}
+
+.NewsButton {
+    width: 100%;
+    height: inherit;
+    background-color: #97c67d;
+}
+
 /* Icon Area */
 
 .icon::after {
