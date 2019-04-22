@@ -147,7 +147,9 @@
               <th>Name</th>
               <th>Email Address</th>
               <th>Address</th>
-              <th>Date</th>
+              <th>Start</th>
+              <th>End</th>
+              <th>Description</th>
               <th></th>
             </tr>
             <tr ng-repeat="event in events | filter: query" ng-click="showDetails($index)">
@@ -155,7 +157,9 @@
               <td>{{event.name}}</td>
               <td>{{event.emailaddress}}</td>
               <td>{{event.address}}</td>
-              <td>{{event.date}}</td>
+              <td>{{event.start}}</td>
+              <td>{{event.end}}</td>
+              <td>{{event.description}}</td>
               <td ng-click="deleteEvent(event._id,$index)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>
             </tr>
           </table>

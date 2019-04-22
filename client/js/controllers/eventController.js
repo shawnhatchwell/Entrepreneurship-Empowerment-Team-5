@@ -25,7 +25,7 @@ angular.module('events').controller('EventsController', ['$scope', 'Events',
         Delete the article using the Events factory. If the removal is successful,
 		navigate back to 'event.list'. Otherwise, display the error.
        */
-	   	if (confirm('Are you sure you want to delete "' + $scope.events[index].name + '"?')) {
+	   	if (confirm('Are you sure you want to delete "' + $scope.events[index].event + '"?')) {
 			$scope.events.splice(index,1);
 			Events.delete(id);
 		}

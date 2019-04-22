@@ -16,7 +16,13 @@ var eventSchema = new Schema({
   event: {
     type: String,
   },
-  date: {
+  start: {
+    type: String,
+  },
+  end: {
+    type: String,
+  },
+  description: {
     type: String,
   },
   created_at: Date,

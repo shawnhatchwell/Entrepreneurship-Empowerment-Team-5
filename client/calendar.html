@@ -68,7 +68,7 @@
         margin-bottom: 1.5%;
         margin-top: 1.5%;
       }
-      input[type=date] {
+      input[type=datetime-local] {
         width: 100%;
         margin-bottom: 1.5%;
         margin-top: 1.5%;
@@ -107,8 +107,12 @@
                       <input type="text" ng-model="newEvent.address" />
                       Event:
                       <input type="text" ng-model="newEvent.event" />
-                      Date:
-                      <input type="date" ng-model="newEvent.date" />
+                      Start:
+                      <input type="datetime-local" ng-model="newEvent.start" />
+                      End:
+                      <input type="datetime-local" ng-model="newEvent.end" />
+                      Description:
+                      <input type="text" ng-model="newEvent.description" />
                       <button class="button1" ng-click="addEvent()">Request Event</button>
                     </form>
                   </div>
