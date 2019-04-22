@@ -113,13 +113,17 @@
         <div class="tableWrapper">
           <table class="table table-striped table-hover">
             <tr>
+              <th>Organization</th>
               <th>Full Name</th>
               <th>Email Address</th>
+              <th>Interest</th>
               <th></th>
             </tr>
             <tr ng-repeat="listing in listings | filter: query" ng-click="showDetails($index)">
+              <td>{{listing.organization}}</td>
               <td>{{listing.lastname}}, {{listing.firstname}}</td>
               <td>{{listing.emailaddress}}</td>
+              <td>{{listing.interest}}</td>
               <td ng-click="deleteListing(listing._id,$index)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>
             </tr>
           </table>
