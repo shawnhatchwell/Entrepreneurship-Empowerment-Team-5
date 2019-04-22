@@ -44,6 +44,8 @@ exports.update = function(req, res) {
   listing.firstname = req.body.firstname;
   listing.lastname = req.body.lastname;
   listing.emailaddress = req.body.emailaddress;
+  listing.organization = req.body.organization;
+  listing.interest = req.body.interest;
   /* Save the article */
   listing.save(function(err) {
     if(err) {
