@@ -123,9 +123,9 @@ button:hover {
 
 .img_description {
   border-radius: 50%;
-  position: sticky;
-  top: 180px;
-  bottom: 0;
+  position: absolute;
+  top: 95%;
+  bottom: 0px;
   left: 0px;
   right: 0px;
   
