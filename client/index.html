@@ -8,18 +8,17 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
     <script src="js/app.js"></script>
     <script src="js/factories/listingFactory.js"></script>
     <script src="js/controllers/listingController.js"></script>
-
 <head>
 
 
 </head>
-
 <body ng-app="directoryApp">
-
     <!-- START navbar placeholder -->
     <div id="nav-placeholder"></div>
 
@@ -63,21 +62,18 @@
     <div class="welcome">
         <img src="images/welcome.jpg" alt="Welcome">
         <div class="WELCOMEbannertext">
-            <h1>WELCOME!</h1>
-            
-            <p style="font-size: 20px"><b>The model is presented as a circle. 
-			This shape reflects the fact that a cycle is involved, one that is 
-			ongoing as the venture interfaces with the infrastructure to gain new 
-			inputs, and the entrepreneur continually learns and improves, new market 
-			opportunities are discovered, enhanced sources of differentiation are 
-			identified, the economic model is refined, and resources are leveraged 
-			to enable venture growth.</b></p>
-			
+            <h1>WELCOME to</h1>
+			<h3><i>Entrepreneurship Empowerment!</i></h3>
+			<p style="font-size: 16px"><i>Ending Poverty with Entrepreneurial Opportunity!</i><br><br><br>
+			<b><span style="font-size: 24px"><u>Our Mission:</u></span><br>
+			Entrepreneurship Empowerment exists to help individuals and communities overcome poverty
+			and adverse conditions through entrepreneurship. We seek to share the empowering and
+			transformative potential of entrepreneurship for enabling people to create their own jobs,
+			futures, wealth, and ability to contribute to their communities.</b></p>
+
         </div>
     </div>
-
-
-  <button type="button" class="button" data-toggle="modal" data-target="#myModal">Subscribe to our newsletter!</button>
+    <button type="button" class="button" data-toggle="modal" data-target="#myModal">Subscribe to our newsletter!</button>
 
   <div id="myModal" class="modal" role="dialog">
     <div class="modal-dialog">
@@ -97,8 +93,12 @@
               <input type="text" ng-model="newListing.firstname" />
               Last Name:
               <input type="text" ng-model="newListing.lastname" />
+              Organization:
+              <input type="text" ng-model="newListing.organization" />
               Email Address:
               <input type="email" ng-model="newListing.emailaddress" />
+              What brings you to the website?
+              <input type="text" ng-model="newListing.interest" />
               <br>
               <br>
               <button class="button" ng-click="addListing()">Subscribe</button>
@@ -122,7 +122,7 @@
     <div class="midSec" style="display: flex">
         <div class="col-6 img" style="flex:1">
             <a href="https://www.amazon.com/Poverty-Entrepreneurship-Developed-Economies-Michael/dp/1788111532" rel="noopener noreferrer" target="_blank">
-			<img style=" width: 60%; height: auto; display: block; margin-left: auto; margin-right: auto; " hspace="25", src="images/bookcover.png">
+			<img style=" width: 60%; height: auto; display: block; margin-left: auto; margin-right: auto; " hspace="25", src="images/bookcover_banner.png">
 			</a>
         </div>
         <div class="col-6 about" style="flex:1">

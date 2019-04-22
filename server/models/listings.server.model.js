@@ -13,6 +13,12 @@ var listingSchema = new Schema({
   emailaddress: {
     type: String,
   },
+  organization: {
+    type: String,
+  },
+  interest: {
+    type: String,
+  },
   created_at: Date,
   updated_at: Date
 });

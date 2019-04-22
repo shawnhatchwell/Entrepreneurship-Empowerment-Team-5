@@ -7,18 +7,10 @@
 <script src="js/app.js"></script>
 <script src="js/factories/eventFactory.js"></script>
 <script src="js/controllers/eventController.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="calendarCotrols.js"></script>
 
 <head>
-  <title>Google SignIn</title>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="script.js"></script>
-
-</head>
-
-<body ng-app="directoryApp">
   <div>
     <div id="nav-placeholder">
       <script>
@@ -27,34 +19,28 @@
         });
       </script>
     </div>
-    <div class="div">
-      <iframe class="g-calendar" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=s9ckmeoukacnb3mtdjfcqafv8k%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FNew_York"
-        style="border-width:0" width="700" height="500" frameborder="0" scrolling="no"></iframe>
-      <style>
-        .g-calendar {
-          margin-left: 60px;
-          margin-top: 20px;
-        }
-      </style>
-      <button type="button" class="button" data-toggle="modal" data-target="#myModal">Request Event</button>
-    </div>
-    
+</head>
 
-
+<body ng-app="directoryApp">>
+  <div class="container">
     <style>
+      .col-md-1 {
+        margin-left: -10%;
+      }
+      .col-md-2 {
+        margin-left: 68%;
+      }
       .button {
         background-color: #6688EE;
         border: none;
         color: white;
-        padding: 15px 32px;
+        padding: 20px 32px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
         font-size: 16px;
-        margin-left: 6.5%;
+        width: 900%;
         cursor: pointer;
-        width: 75%;
-        height: auto;
       }
 
       .button:hover {
@@ -82,57 +68,70 @@
         margin-bottom: 1.5%;
         margin-top: 1.5%;
       }
+      input[type=datetime-local] {
+        width: 100%;
+        margin-bottom: 1.5%;
+        margin-top: 1.5%;
+      }
       input[type=text] {
         width: 100%;
       }
     </style>
+    <div class="row">
+      <div class=col-md-1>
+        <iframe
+          src="https://calendar.google.com/calendar/embed?showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=d7km83om3t4u8j1smh01usj4r8%40group.calendar.google.com&amp;color=%235229A3&amp;ctz=America%2FNew_York"
+          style="border-width:0" width="900" height="530" frameborder="0" scrolling="no"></iframe>
+          <button type="button" class="button" data-toggle="modal" data-target="#myModal">Request Event</button>
 
-    <div id="myModal" class="modal" role="dialog">
-      <div class="modal-dialog">
+          <div id="myModal" class="modal" role="dialog">
+            <div class="modal-dialog">
 
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">
-            </h4>
-          </div>
-          <div class="modal-body">
-            <h3><b><center>Want to add your own event to the calendar?</center></b></h3>
-            <h4><b><center>Enter your request right here!</center></b></h4>
-            <br>
-            <div class="formdiv" ng-controller="EventsController">
-              <form novalidate class="simple-form">
-                Email:
-                <input type="email" ng-model="newEvent.emailaddress" />
-                Name:
-                <input type="text" ng-model="newEvent.name" />
-                Address:
-                <input type="text" ng-model="newEvent.address" />
-                Event:
-                <input type="text" ng-model="newEvent.event" />
-                Date:
-                <input type="text" ng-model="newEvent.date" />
-                <button class="button1" ng-click="addEvent()">Request Event</button>
-              </form>
-              <form action="https://www.SnapHost.com/captcha/send.aspx" method="post" id="myform" target="_top">
-                <input type="hidden" id="skip_WhereToSend" name="skip_WhereToSend" value="your@email.com" />
-                <input type="hidden" id="skip_Subject" name="skip_Subject" value="SnapHost.com script" />
-                <input type="hidden" id="skip_WhereToReturn" name="skip_WhereToReturn" value="www.yourdomain.com/thankyou.htm" />
-                <input type="hidden" id="skip_SnapHostID" name="skip_SnapHostID" value="2UXAPBWKLHU8" />
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">
+                  </h4>
+                </div>
+                <div class="modal-body">
+                  <h3><b><center>Want to add your own event to the calendar?</center></b></h3>
+                  <h4><b><center>Enter your request right here!</center></b></h4>
+                  <br>
+                  <div class="formdiv" ng-controller="EventsController">
+                    <form novalidate class="simple-form">
+                      Email:
+                      <input type="email" ng-model="newEvent.emailaddress" />
+                      Name:
+                      <input type="text" ng-model="newEvent.name" />
+                      Address:
+                      <input type="text" ng-model="newEvent.address" />
+                      Event:
+                      <input type="text" ng-model="newEvent.event" />
+                      Start:
+                      <input type="datetime-local" ng-model="newEvent.start" />
+                      End:
+                      <input type="datetime-local" ng-model="newEvent.end" />
+                      Description:
+                      <input type="text" ng-model="newEvent.description" />
+                      <button class="button1" ng-click="addEvent()">Request Event</button>
+                    </form>
+                  </div>
+
+                </div>
+                <div class="modal-footer">
+                </div>
+              </div>
+
             </div>
-
           </div>
-          <div class="modal-footer">
-          </div>
-        </div>
-
+      </div>
+      <div class=col-md-2>
+        <iframe
+          src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=d7km83om3t4u8j1smh01usj4r8%40group.calendar.google.com&amp;color=%235229A3&amp;ctz=America%2FNew_York"
+          style="border-width:0" width="500" height="600" frameborder="0" scrolling="no"></iframe>
       </div>
     </div>
-    <style>
-      .div {
-        float: left;
-      }
-    </style>
+  </div>
 </body>
 
 </html>

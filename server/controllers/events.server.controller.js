@@ -44,7 +44,9 @@ exports.update = function(req, res) {
   event.name = req.body.name;
   event.address = req.body.address;
   event.event = req.body.event;
-  event.date = req.body.date;
+  event.start = req.body.start;
+  event.end = req.body.end;
+  event.description = req.body.description;
   /* Save the article */
   event.save(function(err) {
     if(err) {
