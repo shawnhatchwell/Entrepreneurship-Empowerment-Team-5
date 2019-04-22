@@ -155,6 +155,7 @@
               <th>End</th>
               <th>Description</th>
               <th></th>
+              <th></th>
             </tr>
             <tr ng-repeat="event in events | filter: query" ng-click="showDetails($index)">
               <td>{{event.event}}</td>
@@ -164,6 +165,7 @@
               <td>{{event.start}}</td>
               <td>{{event.end}}</td>
               <td>{{event.description}}</td>
+              <td ng-click=""><span style="color: green;" class="glyphicon glyphicon-plus"></span></td>
               <td ng-click="deleteEvent(event._id,$index)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>
             </tr>
           </table>
