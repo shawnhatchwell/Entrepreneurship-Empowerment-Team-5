@@ -78,6 +78,16 @@ button:hover {
     width: 100%;
 }
 
+.welcome .WELCOMEbannertext {
+    float: left;
+    text-align: left;
+    width: 30%;
+    color: white;
+    position: absolute;
+    padding: 15px;
+    top: 10px;
+}
+
 /* Icon Area */
 
 .icon::after {
