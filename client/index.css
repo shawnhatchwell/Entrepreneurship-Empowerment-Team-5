@@ -59,6 +59,14 @@ button:hover {
     padding: inherit;
 }
 
+.loginauthorization .login-form .state-hidden{
+      display: none;
+    }
+    
+.loginauthorization .login-user .state-hidden {
+      display: none;
+}
+
 
 /* INDEX CSS */
 

@@ -40,10 +40,13 @@
           <li><a href="research.html">Research</a></li>
 		  <li><a href="requests.html">Request Info</a></li>
           <li>
+              
+              <div class="loginauthorization">
               <button onclick="document.getElementById('login').style.display='block'" style="width: auto; padding: 14px" >Login</button>
               
+                  
               <div id="login" class="modal">
-                  <form action="navbar.html" class="modal-content animate">
+                  <form data-login-form action="index.html" class="modal-content animate login-form">
                   
                   <div class="container">
                       <label for="username"><b>E-mail</b></label>
@@ -82,7 +85,9 @@
                           <p id="email" class="alert alert-danger"></p><button onclick="signOut()" class="btn btn-danger">Sign Out</button>
                       </div>
                   </form>
-              
+              </div>
+                  
+                      
               </div>
           </li>
           
