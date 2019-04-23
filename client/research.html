@@ -3,11 +3,15 @@
 <html>
 
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<<<<<<< HEAD
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
+=======
+
+>>>>>>> d5536530f30e1f0774d5b352a1ed5c23d8e442b0
 <head>
 
-    
+
 </head>
 
 <body ng-app="directoryApp">
@@ -20,13 +24,13 @@
 $(function(){
   $("#nav-placeholder").load("navbar.html");
 }); </script>
- 
+
     <div class="container">
     <div class="row">
         <h1>Research</h1>
     </div>
       <div class="row" ng-controller="ResourcesController">
-        
+
           <div class="input-group" id="searchBar">
             <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
             <input type="text" class="form-control" placeholder="Search" ng-model="query">
@@ -41,17 +45,17 @@ $(function(){
               <tr ng-repeat="resource in resources | filter: query" ng-click="showDetails(resource._id)">
                 <td>{{resource.citation}}</td>
                 <td>{{resource.category}}</td>
-				<td>{{resource.url}}</td>
+				<td style="overflow:hidden;word-break:break-all">{{resource.url}}</td>
 
               </tr>
             </table>
-			
-			
-			
+
+
+
           </div>
-          
-        
-        
+
+
+
       </div>
     </div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
