@@ -155,6 +155,7 @@
               <th>Start</th>
               <th>End</th>
               <th>Description</th>
+              <th> </th>
               <th></th>
               <th></th>
             </tr>
@@ -167,9 +168,7 @@
               <td id=end>{{event.end}}</td>
               <td id=description>{{event.description}}</td>
               <td>
-                <form action="./admin/approve" method="post">
-                  <button class="glyphicon glyphicon-plus" style="color: green;" type="submit"></button>
-                </form>
+              <td ng-click="approveEvent(event._id,$index)"><span style="color: green;" class="glyphicon glyphicon-plus"></span></td>
               </td>
               <td ng-click="deleteEvent(event._id,$index)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>
             </tr>

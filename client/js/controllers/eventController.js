@@ -20,10 +20,12 @@ angular.module('events').controller('EventsController', ['$scope', 'Events',
 		Events.create($scope.newEvent);
     };
 
-    $scope.approveEvent = function() {
+    $scope.approveEvent = function(id, index) {
       if (confirm('Are you sure you want to approve "' + $scope.events[index].event + '"?')) {
-      //$scope.events.splice(index,1);
-      //Events.delete(id);
+        console.log($scope.events[index]);
+        Events.approve(id);
+      $scope.events.splice(index,1);
+      Events.delete(id);
     }
     };
 

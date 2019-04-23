@@ -14,6 +14,9 @@ angular.module('events', []).factory('Events', function($http) {
        */
        //help me
        return $http.delete('/api/events/'+id);
+    },
+    approve: function(id) {
+       return $http.delete('/api/events/'+id);
     }
   };
 

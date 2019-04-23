@@ -59,6 +59,7 @@ exports.update = function(req, res) {
 
 /* Delete a resource */
 exports.delete = function(req, res) {
+  console.log('poop');
   var resource = req.resource;
 
   /** TODO **/
