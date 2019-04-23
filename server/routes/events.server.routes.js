@@ -18,7 +18,9 @@ router.route('/')
 router.route('/:eventId')
   .get(events.read)
   .put(events.update)
+  .delete(events.approve)
   .delete(events.delete);
+
 
 /*
   The 'router.param' method allows us to specify middleware we would like to use to handle

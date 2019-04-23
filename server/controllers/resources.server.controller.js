@@ -41,11 +41,9 @@ exports.update = function(req, res) {
   var resource = req.resource;
   /** TODO **/
   /* Replace the article's properties with the new properties found in req.body */
-  resource.title = req.body.title;
-  resource.filetype = req.body.filetype;
-  resource.path = req.body.path;
-  resource.notes = req.body.notes;
-  resource.tags = req.body.tags;
+  resource.citation = req.body.citation;
+  resource.url = req.body.url;
+  resource.category = req.body.category;
   /* Save the article */
   resource.save(function(err) {
     if(err) {
@@ -59,6 +57,7 @@ exports.update = function(req, res) {
 
 /* Delete a resource */
 exports.delete = function(req, res) {
+  console.log('poop');
   var resource = req.resource;
 
   /** TODO **/

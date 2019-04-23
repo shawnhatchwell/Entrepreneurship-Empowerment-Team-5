@@ -4,20 +4,15 @@ var mongoose = require('mongoose'),
 
 /* Create your schema */
 var resourceSchema = new Schema({
-  title: {
+  citation: {
     type: String,
     required: true
   },
-  filetype: {
+  url: {
     type: String,
     required: true,
   },
-  path: {
-    type: String,
-    required: true,
-  },
-  notes: {type: String},
-  tags: [{type: String}],
+  category: {type: String},
   created_at: Date,
   updated_at: Date
 });

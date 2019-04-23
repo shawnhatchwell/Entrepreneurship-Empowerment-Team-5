@@ -12,6 +12,8 @@
   <script src="js/controllers/eventController.js"></script>
   <script src="js/factories/listingFactory.js"></script>
   <script src="js/controllers/listingController.js"></script>
+  <script src="js/factories/resourceFactory.js"></script>
+  <script src="js/controllers/resourceController.js"></script>
 </head>
 <style>
   .col-lg-2 {
@@ -155,6 +157,7 @@
               <th>Start</th>
               <th>End</th>
               <th>Description</th>
+              <th> </th>
               <th></th>
               <th></th>
             </tr>
@@ -167,9 +170,7 @@
               <td id=end>{{event.end}}</td>
               <td id=description>{{event.description}}</td>
               <td>
-                <form action="./admin/approve" method="post">
-                  <button class="glyphicon glyphicon-plus" style="color: green;" type="submit"></button>
-                </form>
+              <td ng-click="approveEvent(event._id,$index)"><span style="color: green;" class="glyphicon glyphicon-plus"></span></td>
               </td>
               <td ng-click="deleteEvent(event._id,$index)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>
             </tr>
@@ -177,6 +178,37 @@
         </div>
       </div>
     </div>
+	<br><br>
+	<div class="row" ng-controller="ResourcesController">
+      <div class=col-lg-1>
+        <div class="tableWrapper">
+          <table class="table table-striped table-hover">
+            <tr>
+              <th>Research Citation</th>
+              <th>Category</th>
+              <th>URL</th>
+              <th></th>
+            </tr>
+            <tr ng-repeat="resource in resources | filter: query" ng-click="showDetails($index)">
+              <td id=event>{{resource.citation}}</td>
+              <td id=name>{{resource.category}}</td>
+              <td id=email>{{resource.url}}</td>
+              <td ng-click="deleteResource(resource._id,$index)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+	  <div class=col-lg-2>
+        <form novalidate class="simple-form">
+            <h2>Add Research</h2>
+            Citation: <input type="text" ng-model="newResource.citation" /><br />
+            Category: <input type="text" ng-model="newResource.category" /><br />
+            URL: <input type="text" ng-model="newResource.url" /><br /><br>
+            <button class="button" ng-click="addResource()">Add Research</button>
+          </form>
+      </div>
+    </div>
+	
   </div>
 </body>
 
