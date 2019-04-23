@@ -1,7 +1,12 @@
+var events = require('../controllers/events.server.controller.js'),
+  express = require('express'),
+  router = express.Router();
 const fs = require('fs');
 const readline = require('readline');
 const {google} = require('googleapis');
+Event = require('../models/events.server.model.js');
 
+router.post('/approve', function(req, res, next) {
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/calendar'];
 // The file token.json stores the user's access and refresh tokens, and is
@@ -70,6 +75,7 @@ function getAccessToken(oAuth2Client, callback) {
  * Lists the next 10 events on the user's primary calendar.
  * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
  */
+
 function listEvents(auth) {
   const calendar = google.calendar({version: 'v3', auth});
   calendar.events.list({
@@ -91,40 +97,45 @@ function listEvents(auth) {
       console.log('No upcoming events found.');
     }
   });
-}
-
-var event = {
-  'summary': '',
-  'location': '',
-  'description': '',
+  	 console.log('testadd');
+	var event = {
+  'summary': 'Google I/O 2015',
+  'location': '800 Howard St., San Francisco, CA 94103',
+  'description': 'A chance to hear more about Google\'s developer products.',
   'start': {
     'dateTime': '2015-05-28T09:00:00-07:00',
-    'timeZone': 'America/New_York'
+    'timeZone': 'America/Los_Angeles',
   },
   'end': {
     'dateTime': '2015-05-28T17:00:00-07:00',
-    'timeZone': 'America/New_York'
+    'timeZone': 'America/Los_Angeles',
   },
   'recurrence': [
     'RRULE:FREQ=DAILY;COUNT=1'
   ],
   'attendees': [
-    {'email': ''}
+    {'email': 'lpage@example.com'},
   ],
   'reminders': {
     'useDefault': false,
     'overrides': [
       {'method': 'email', 'minutes': 24 * 60},
-      {'method': 'popup', 'minutes': 10}
-    ]
-  }
+      {'method': 'popup', 'minutes': 10},
+    ],
+  },
 };
-
-var request = gapi.client.calendar.events.insert({
-  'calendarId': 'primary',
-  'resource': event
+calendar.events.insert({
+  auth: auth,
+  calendarId: 'primary',
+  resource: event,
+}, function(err, event) {
+  if (err) {
+    console.log('There was an error contacting the Calendar service: ' + err);
+    return;
+  }
+  console.log('Event created: %s', event.data.htmlLink);
+});
+}
 });
 
-request.execute(function(event) {
-  appendPre('Event created: ' + event.htmlLink);
-});
+module.exports = router;
