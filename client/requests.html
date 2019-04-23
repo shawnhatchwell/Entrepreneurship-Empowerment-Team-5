@@ -25,34 +25,100 @@
       $("#nav-placeholder").load("navbar.html");
     });
   </script>
-    <h1>Request Program Information</h1>
+    
+	 <style>
+      .col-md-1 {
+        margin-left: -10%;
+      }
 
+      .col-md-2 {
+        margin-left: 68%;
+      }
+
+      .button {
+        background-color: #6688EE;
+        border: none;
+        color: white;
+        padding: 20px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        width: 100%;
+        cursor: pointer;
+      }
+
+      .button:hover {
+        background-color: #E3E9FF;
+      }
+
+      .button1 {
+        background-color: #6688EE;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        width: 100%;
+        height: auto;
+      }
+
+      .button1:hover {
+        background-color: #E3E9FF;
+      }
+
+      input[type=email] {
+        width: 100%;
+        margin-bottom: 1.5%;
+        margin-top: 1.5%;
+      }
+
+      input[type=datetime-local] {
+        width: 100%;
+        margin-bottom: 1.5%;
+        margin-top: 1.5%;
+      }
+
+      input[type=text] {
+        width: 100%;
+      }
+    </style>
   <div class="formdiv" ng-controller="RequestsController">
-    <form novalidate class="simple-form" action="mailto:entrepreneurshipempower@gmail.com" method="post">
-      <p> If you would like more information about programs available through Entrepreneurship
-        Empowerment, please let us know which the programs in which you are interested,
-        and please provide contact information so we can follow up with you:
-        <br>
-        <input type="radio" name="info" value="workshops" ng-model="newRequest.response"><label for="workshops">Training workshops on poverty and entrepreneurship in your community</label><br>
-        <input type="radio" name="info" value="programAssistance" ng-model="newRequest.response"><label for="programAssistance">Assistance with development of community-based poverty and entrepreneurship programs</label><br>
-        <input type="radio" name="info" value="researchAssistance" ng-model="newRequest.response"><label for="researchAssistance">Research assistance related to community-based examinations of poverty and entrepreneurship</label><br>
-        <input type="radio" name="info" value="conference" ng-model="newRequest.response"><label for="conference">Organization of conferences or community forums on poverty and entrepreneurship</label><br>
-        <input type="radio" name="info" value="other" ng-model="newRequest.response"><label for="other">Other</label><br>
-        <input type="radio" name="info" value="notSure" ng-model="newRequest.response"><label for="notSure">Not sure</label><br>
+	<div class="midSec" style="display: flex">
+        <div class="col-6 img" style="flex:1">
+            <p style="font-size:24px"> If you would like more information about programs available through Entrepreneurship
+			Empowerment, please let us know the programs in which you are interested.<br><br></p>
+			<p style="font-size:24px">Additionally, please provide contact information so we can follow up with you:</p>
+        </div>
+        <div class="col-6 about" style="flex:1">
+			<form novalidate class="simple-form" action="mailto:entrepreneurshipempower@gmail.com" method="post">
+			  <p>
+				<input type="radio" name="info" value="workshops" ng-model="newRequest.response"><label for="workshops">Training workshops on poverty and entrepreneurship in your community</label><br>
+				<input type="radio" name="info" value="programAssistance" ng-model="newRequest.response"><label for="programAssistance">Assistance with development of community-based poverty and entrepreneurship programs</label><br>
+				<input type="radio" name="info" value="researchAssistance" ng-model="newRequest.response"><label for="researchAssistance">Research assistance related to community-based examinations of poverty and entrepreneurship</label><br>
+				<input type="radio" name="info" value="conference" ng-model="newRequest.response"><label for="conference">Organization of conferences or community forums on poverty and entrepreneurship</label><br>
+				<input type="radio" name="info" value="other" ng-model="newRequest.response"><label for="other">Other</label><br>
+				<input type="radio" name="info" value="notSure" ng-model="newRequest.response"><label for="notSure">Not sure</label><br>
 
-        <br>
-        Your name:<br><input name="name" ng-model="newRequest.name" />
-        <br>
-        Your organization:<br><input name="organization" ng-model="newRequest.organization" />
-        <br>
-        Phone:<br><input name="phone" ng-model="newRequest.phone" />
-        <br>
-        Email address:<br><input name="email" ng-model="newRequest.emailaddress" />
-        <br>
-        <br>
-        <button class="button" ng-click="addRequest()">Submit</button>
-      </p>
-    </form>
+				<br>
+				Your name:<br><input name="name" ng-model="newRequest.name" />
+				<br>
+				Your organization:<br><input name="organization" ng-model="newRequest.organization" />
+				<br>
+				Phone:<br><input name="phone" ng-model="newRequest.phone" />
+				<br>
+				Email address:<br><input name="email" ng-model="newRequest.emailaddress" />
+				<br>
+				<br>
+				<button class="button" ng-click="addRequest()">Submit</button>
+				</p>
+			</form>
+        </div>
+    </div>
+	
   </div>
 </body>
 
