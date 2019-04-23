@@ -9,6 +9,7 @@ var path = require('path'),
     requestsRouter = require('../routes/requests.server.routes');
 	resourcesRouter = require('../routes/resources.server.routes');
   adminRouter = require('../routes/admintest.routes');
+  calendarRouter = require('../routes/calendar.routes');
 
 module.exports.init = function() {
   //connect to database
@@ -38,6 +39,7 @@ module.exports.init = function() {
   app.use('/api/requests', requestsRouter);
   app.use('/api/resources', resourcesRouter);
   app.use('/admin', adminRouter);
+  app.use('/admin', calendarRouter);
 
   /**TODO
   Go to homepage for all routes not specified */

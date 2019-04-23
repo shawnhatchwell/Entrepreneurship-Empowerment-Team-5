@@ -20,6 +20,13 @@ angular.module('events').controller('EventsController', ['$scope', 'Events',
 		Events.create($scope.newEvent);
     };
 
+    $scope.approveEvent = function() {
+      if (confirm('Are you sure you want to approve "' + $scope.events[index].event + '"?')) {
+      //$scope.events.splice(index,1);
+      //Events.delete(id);
+    }
+    };
+
     $scope.deleteEvent = function(id, index) {
 	   /**TODO
         Delete the article using the Events factory. If the removal is successful,
